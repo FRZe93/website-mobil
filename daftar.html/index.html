@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daftar Akun</title>
+  <link rel="stylesheet" href="./style.css">
+  <script>
+    function register(event) {
+      event.preventDefault();
+      const username = document.getElementById("newUsername").value;
+      const password = document.getElementById("newPassword").value;
+
+      if (!username || !password) {
+        alert("Harap isi semua kolom.");
+        return;
+      }
+
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+      const usernameExists = users.some(user => user.username === username);
+
+      if (usernameExists) {
+        alert("Username sudah digunakan!");
+        return;
+      }
+
+      users.push({ username, password });
+      localStorage.setItem("users", JSON.stringify(users));
+
+      alert("Pendaftaran berhasil! Silakan login.");
+      window.location.href = "index.html";
+    }
+  
+  </script>
+</head>
+<body>
+  <section>
+    <div class="signin">
+      <div class="content">
+        <h2>Daftar</h2>
+        <form onsubmit="register(event)" class="form">
+          <div class="inputBox">
+            <input type="text" id="newUsername" required>
+            <i>Nama Pengguna</i>
+          </div>
+
+          <div class="inputBox">
+            <input type="password" id="newPassword" required>
+            <i>Kata Sandi</i>
+          </div>
+
+          <div class="links">
+            <a href="../dist/index.html">Sudah punya akun?</a>
+          </div>
+
+          <div class="inputBox">
+            <input type="submit" value="Daftar">
+          </div>
+        </form>
+        
+      </div>
+    </div>
+  </section>
+</body>
+</html>
