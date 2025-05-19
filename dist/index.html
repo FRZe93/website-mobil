@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <title>Login Verifikasi</title>
@@ -7,16 +7,22 @@
   <script>
     function login(event) {
       event.preventDefault();
+
       const username = document.getElementById("username").value;
       const password = document.getElementById("password").value;
 
+      // Ambil user dari localStorage
       const savedUsers = JSON.parse(localStorage.getItem("users")) || [];
+
+      // Cek apakah user ditemukan
       const foundUser = savedUsers.find(user => user.username === username && user.password === password);
 
       if (foundUser) {
         alert("Login berhasil!");
-        // Simpan nama pengguna ke localStorage
+
+        // Simpan username yang sedang login
         localStorage.setItem("loggedInUser", username);
+
         // Arahkan ke halaman login sukses
         window.location.href = "login-sukses.html";
       } else {
