@@ -9,13 +9,13 @@
       event.preventDefault();
       const username = document.getElementById("username").value;
       const password = document.getElementById("password").value;
-    
+
       const savedUsers = JSON.parse(localStorage.getItem("users")) || [];
       const foundUser = savedUsers.find(user => user.username === username && user.password === password);
-    
+
       if (foundUser) {
         alert("Login berhasil!");
-             window.location.href = "website mobil/index.html";
+        window.location.href = "index.html";
       } else {
         alert("Username atau password salah!");
       }
@@ -28,27 +28,25 @@
       <div class="content">
         <h2>Masuk</h2>
         <form onsubmit="login(event)" class="form">
-         <form action="index.html">
           <div class="inputBox">
             <input type="text" id="username" required>
             <i>Nama Pengguna</i>
           </div>
-        
+
           <div class="inputBox">
             <input type="password" id="password" required>
             <i>Kata Sandi</i>
           </div>
-        
+
           <div class="links">
             <a href="#">Lupa Kata Sandi</a>
             <a href="../daftar.html/index.html">Daftar</a>
           </div>
-        
+
           <div class="inputBox">
             <input type="submit" value="Login">
           </div>
-         </form>
-        </form>             
+        </form>
       </div>
     </div>
   </section>
