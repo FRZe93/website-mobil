@@ -1,63 +1,76 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Login Verifikasi</title>
-  <link rel="stylesheet" href="style.css">
-  <script>
-    function login(event) {
-      event.preventDefault();
+  <title>Masuk pengguna</title>
+  <link rel="stylesheet" href="./style.css">
 
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
-
-      // Ambil user dari localStorage
-      const savedUsers = JSON.parse(localStorage.getItem("users")) || [];
-
-      // Cek apakah user ditemukan
-      const foundUser = savedUsers.find(user => user.username === username && user.password === password);
-
-      if (foundUser) {
-        alert("Login berhasil!");
-
-        // Simpan username yang sedang login
-        localStorage.setItem("loggedInUser", username);
-
-        // Arahkan ke halaman login sukses
-        window.location.href = "login-sukses.html";
-      } else {
-        alert("Username atau password salah!");
-      }
-    }
-  </script>
 </head>
 <body>
-  <section>
-    <div class="signin">
-      <div class="content">
-        <h2>Masuk</h2>
-        <form onsubmit="login(event)" class="form">
-          <div class="inputBox">
-            <input type="text" id="username" required>
-            <i>Nama Pengguna</i>
-          </div>
+<!-- partial:index.partial.html -->
+<!doctype html>
 
-          <div class="inputBox">
-            <input type="password" id="password" required>
-            <i>Kata Sandi</i>
-          </div>
+<html lang="en"> 
 
-          <div class="links">
-            <a href="#">Lupa Kata Sandi</a>
-            <a href="daftar.html">Daftar</a>
-          </div>
+ <head> 
 
-          <div class="inputBox">
-            <input type="submit" value="Login">
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
+  <meta charset="UTF-8"> 
+
+  <title>CodePen - Animated Login Form using Html &amp; CSS Only</title> 
+
+  <link rel="stylesheet" href="./style.css"> 
+
+ </head> 
+
+ <body> <!-- partial:index.partial.html --> 
+
+  <section> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+
+   <div class="signin"> 
+
+    <div class="content"> 
+
+     <h2>Masuk</h2> 
+
+     <div class="form"> 
+
+      <div class="inputBox"> 
+
+       <input type="text" required> <i>Nama Pengguna</i> 
+
+      </div> 
+
+      <div class="inputBox"> 
+        
+
+         <input type="password" required> <i>Kata Sandi</i>
+      
+
+      </div> 
+
+      <div class="links"> <a href="#">Lupa Kata Sandi</a> <a href="#">Daftar</a> 
+
+      </div> 
+
+      <div class="inputBox"> 
+        <form action="../index.html">
+          <input type="submit" value="Login">
+        </form>   
+
+      </div> 
+
+     </div> 
+
+    </div> 
+
+   </div> 
+
+  </section> <!-- partial --> 
+
+ </body>
+
+</html>
+<!-- partial -->
+  
 </body>
 </html>
